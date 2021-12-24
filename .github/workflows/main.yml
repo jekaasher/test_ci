@@ -29,5 +29,5 @@ jobs:
       - name: Build docker image
         run: |
             docker build -t test:latest .
-            dosker ps -a 
+            docker ps -a 
             docker image list
