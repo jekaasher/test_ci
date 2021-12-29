@@ -30,8 +30,6 @@ jobs:
       
        
         run: |
-              -if: ${{ github.ref_name == 'dev' }}     
-
             docker build -t test:dev-$(date +'%s') .
             docker ps -a 
             docker image list
