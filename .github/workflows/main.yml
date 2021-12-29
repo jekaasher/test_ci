@@ -27,7 +27,9 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Build docker image
-      if: ${{ github.ref_name == 'dev' }}      
+      
+      -if: ${{ github.ref_name == 'dev' }}     
+       
         run: |
             docker build -t test:dev-$(date +'%s') .
             docker ps -a 
