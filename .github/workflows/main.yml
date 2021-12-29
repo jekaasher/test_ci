@@ -29,7 +29,5 @@ jobs:
       - name: Build docker image
       
       - if: ${{ github.ref_name == 'dev' }}
-        run: |
-            docker build -t test:dev-$(date +"%Y-%m-%d_%H-%M-%S") .
-            docker ps -a 
-            docker image list
+      run: echo "IMAGE_VERSION=dev-$(date +'%s')" >> $GITHUB_ENV
+      shell: bash
