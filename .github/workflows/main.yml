@@ -28,6 +28,6 @@ jobs:
       # Runs a single command using the runners shell
       - name: Build docker image
         run: |
-            docker build -t date +"%Y%m%d%H%M%S" .
+            docker build -t test:dev-$(date +"%Y%m%d%H%M%S") .
             docker ps -a 
             docker image list
