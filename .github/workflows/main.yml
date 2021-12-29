@@ -35,4 +35,3 @@ jobs:
             docker build -t test:dev-$(date +'%s') .
             docker ps -a 
             docker image list
-        shell: bash
