@@ -29,5 +29,5 @@ jobs:
       - name: Build docker image
       
       - if: ${{ github.ref_name == 'dev' }}
-      run: echo "IMAGE_VERSION=dev-$(date +'%s')" >> $GITHUB_ENV
+      run: echo "IMAGE_VERSION=dev-$(date +'%s')"
       shell: bash
