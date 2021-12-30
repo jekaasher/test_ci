@@ -30,7 +30,7 @@ jobs:
       
        
         run: |
-            docker build -t test:dev-$(date +'%s') .
+            docker build -t tdev-$(date +"%Y%m%d%H%M%S") .
             docker ps -a 
             docker image list
             
