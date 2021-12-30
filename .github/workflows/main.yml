@@ -15,8 +15,10 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  
   # This workflow contains a single job called "build"
   build:
+   
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -28,7 +30,7 @@ jobs:
       # Runs a single command using the runners shell
          name: Build docker image
       
-        # if: ${{ github.ref_name == 'dev' }}
+           if: ${{ github.ref_name == 'dev' }}
            run: |
             docker build -t test:dev-$(date +"%Y%m%d%H%M%S") .
             docker ps -a 
