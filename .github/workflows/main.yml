@@ -27,7 +27,10 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Build docker image
+        if: ${{ github.ref_name == 'dev' }}
+        
         run: |
-            docker build -t test:latest .
+            echo "IMAGE_VERSION=dev-$(date +'%s')" >> $GITHUB_ENV
+            docker build -t test:dev-$(date +"%Y%m%d%H%M%S") .
             docker ps -a 
             docker image list
