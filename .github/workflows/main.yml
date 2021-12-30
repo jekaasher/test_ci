@@ -26,11 +26,9 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-      - name: Build docker image
-      
-       
+        name: Build docker image
+           
         run: |
             docker build -t test:dev-$(date +'%s') .
             docker ps -a 
             docker image list
-            
