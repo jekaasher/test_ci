@@ -25,10 +25,10 @@ jobs:
       - uses: actions/checkout@v2
       
       # Runs a single command using the runners shell
-        name: Build docker image
+        - name: Build docker image
       
-        if: ${{ github.ref_name == 'dev' }}
-          run: |
-            docker build -t test:dev-$(date +"%Y%m%d%H%M%S") .
-            docker ps -a 
-            docker image list
+          if: ${{ github.ref_name == 'dev' }}
+            run: |
+              docker build -t test:dev-$(date +"%Y%m%d%H%M%S") .
+              docker ps -a 
+              docker image list
