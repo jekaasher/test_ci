@@ -10,8 +10,7 @@ on:
       - 'rc-*'
   pull_request:
     branches: [release, main]
-
- name: Get new tag
+       name: Get new tag
        uses: ./.github/workflows/get-new-tag
 
      # Build the Docker image with tag for google container registry
