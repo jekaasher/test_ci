@@ -46,7 +46,6 @@ jobs:
           repository: $REPOSITORY
           zone: $GCP_ZONE
 
-
       # Build the Docker image with tag for google container registry
       - name: Build
         run: |-
