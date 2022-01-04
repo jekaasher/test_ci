@@ -2,19 +2,8 @@ name: CICD
 
 on:
   push:
-    branches: [dev]
-    paths-ignore: 
-#      - '.github/workflows/**'
-      - '.deployments/**'
-    tags:
-      - 'v[0-9].[0-9]+.[0-9]+'
-      - 'rc-[0-9]+'
-  pull_request:
-    branches: [release, main]
-    paths-ignore: 
-#      - '.github/workflows/**'
-      - '.deployments/**'
-
+    branches: [main]
+   
 env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT }}
   GCP_ZONE: europe   # TODO: update to cluster zone
