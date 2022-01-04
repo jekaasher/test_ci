@@ -1,8 +1,6 @@
-
-  
 name: Get new tag
-description: Generate new tag and sets it to env $IMAGE_VERSION
-runs:
+ description: Generate new tag and sets it to env $IMAGE_VERSION
+ runs:
   using: "composite"
   steps:
     - if: ${{ github.base_ref == 'main' ||  github.base_ref == 'release' }}
