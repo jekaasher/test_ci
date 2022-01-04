@@ -2,7 +2,7 @@
 
 name: CI
 env:
-    app: "Dockerfile"
+    APPLICATION_NAME: "Dockerfile"
     PACKAGE_NAME    : "docker-tag-version-${{github.sha}}"
 
 # Controls when the workflow will run
@@ -34,4 +34,4 @@ jobs:
             docker build -t test:dev-$(date +"%Y%m%d%H%M%S") .
             docker ps -a 
             docker image list
-            echo "Application name: ${{ env."APPLICATION_NAME}}"
+            echo "Application name: ${{ env."APPLICATION_NAME"}}"
