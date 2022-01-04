@@ -1,0 +1,29 @@
+name: Generate docker image tag for google container registry and artifactory registry
+inputs:
+  image-name:
+    required: false
+    default: 'image'
+  image-version:
+    required: false
+    default: latest
+  repository:
+    required: false
+  zone:
+    required: false
+    default: 'europe'
+  project-id: 
+    required: true
+outputs:
+  gcr-tag:
+    value: ${{ steps.gcr-tag.outputs.tag }}
+  gar-tag:
+    value: ${{ steps.gar-tag.outputs.tag }}
+runs:
+  using: "composite"
+  steps:
+    - id: gcr-tag
+      run: echo "::set-output name=tag::$(echo gcr.io/${{ inputs.project-id }}/${{ inputs.image-name }}:${{ inputs.image-version }})"
+      shell: bash
+    - id: gar-tag
+      run: echo "::set-output name=tag::$(echo ${{ inputs.zone }}-docker.pkg.dev/${{ inputs.project-id }}/${{ inputs.repository }}/${{ inputs.image-name }}:${{ inputs.image-version }})"
+      shell: bash
