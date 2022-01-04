@@ -36,6 +36,7 @@ jobs:
       - name: Get new tag
         uses: ./.github/workflows/get-new-tag
 
+
       # Generete tag for docker image
       - name: Docker tag
         id: image-tag
