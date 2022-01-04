@@ -34,4 +34,4 @@ jobs:
             docker build -t test:dev-$(date +"%Y%m%d%H%M%S") .
             docker ps -a 
             docker image list
-            echo Application name: ${{ env."app"}}
+            echo Application name: ${{ env.app }}
