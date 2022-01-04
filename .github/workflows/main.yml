@@ -2,8 +2,8 @@
 
 name: CI
 env:
-    APPLICATION_NAME: "MyApp"
-    PACKAGE_NAME    :     "docker-tag-version-${{github.sha}}"
+    APPLICATION_NAME: "app"
+    PACKAGE_NAME    : "docker-tag-version-${{github.sha}}"
 
 # Controls when the workflow will run
 on:
